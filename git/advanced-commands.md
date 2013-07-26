@@ -12,7 +12,7 @@ Es ist in Git möglich nur Teile der Änderungen in einer Datei zu commiten. Ang
 
 Danach wird man bei jeder Änderung in der Datei gefragt ob man sie übernehmen will (y) oder es bleiben lassen möchte (n). Danach kann man die gestaged Änderungen bequem committen.
 
-Die weiteren Abkürzungen haben laut [Stackoverflow](1) folgende Bedeutungen:
+Die weiteren Abkürzungen haben laut Stackoverflow[^1] folgende Bedeutungen:
 
 	y - stage this hunk
 	n - do not stage this hunk
