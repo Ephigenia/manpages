@@ -33,6 +33,18 @@ Die weiteren Abkürzungen haben laut [Stackoverflow](http://stackoverflow.com/qu
 
 Man kann wenn die Commit Messages ein einheitliches Format mit Headline und Description haben wunderbare Changelogs generieren:
 
-	git log --format=%s --no-merges --since="2 days"
+	git log --format=%s --no-merges --since="14 days"
 
 Zeigt das Log der letzten 2 Tage mit den Headlines welches sich hoffentlich dazu eigenen sie in ein Changelog einzutragen.
+
+## Standup
+
+Man kann sich über das Log Feature auch direkt die Sachen anzeigen lassen die man am letzten Tag so committet hat:
+
+	git log --pretty=oneline --abbrev-commit --since yesterday --author ephigenia
+
+## Tree
+
+Um sich den Commit-Tree anzuzeigen wie man ihn vielleicht aus verschiedenen GUIs für Git kennt kann man sich ebenfalls dem `log` Befehl zu Hilfe nehmen:
+
+	git log --graph --decorate --pretty=oneline --abbrev-commit
