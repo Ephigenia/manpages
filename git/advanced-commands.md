@@ -12,7 +12,7 @@ Es ist in Git möglich nur Teile der Änderungen in einer Datei zu commiten. Ang
 
 Danach wird man bei jeder Änderung in der Datei gefragt ob man sie übernehmen will (y) oder es bleiben lassen möchte (n). Danach kann man die gestaged Änderungen bequem committen.
 
-Die weiteren Abkürzungen haben laut Stackoverflow[^1] folgende Bedeutungen:
+Die weiteren Abkürzungen haben laut [Stackoverflow](http://stackoverflow.com/questions/10605405/what-does-each-of-the-y-n-q-a-d-k-j-j-g-e-stand-for-in-context-of-git-p) folgende Bedeutungen:
 
 	y - stage this hunk
 	n - do not stage this hunk
@@ -36,7 +36,3 @@ Man kann wenn die Commit Messages ein einheitliches Format mit Headline und Desc
 	git log --format=%s --no-merges --since="2 days"
 
 Zeigt das Log der letzten 2 Tage mit den Headlines welches sich hoffentlich dazu eigenen sie in ein Changelog einzutragen.
-
-### Links
-
-[1] http://stackoverflow.com/questions/10605405/what-does-each-of-the-y-n-q-a-d-k-j-j-g-e-stand-for-in-context-of-git-p
