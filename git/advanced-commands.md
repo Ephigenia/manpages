@@ -48,3 +48,18 @@ Man kann sich über das Log Feature auch direkt die Sachen anzeigen lassen die m
 Um sich den Commit-Tree anzuzeigen wie man ihn vielleicht aus verschiedenen GUIs für Git kennt kann man sich ebenfalls dem `log` Befehl zu Hilfe nehmen:
 
 	git log --graph --decorate --pretty=oneline --abbrev-commit
+	
+## Use Same Wording Hook
+
+Beim Eingeben der Commit-Message (`git commit`) kann man sich in dem Editor welcher geöffnet wird, die x-letzten Commit-Nachrichten anzeigen lassen:
+
+	#!/bin/sh
+	
+	# .git/hooks/prepare-commit-msg
+	echo "#"
+	echo "# Last 5 commit messages" >> $1
+	echo "# ----------------------" >> $1
+	COMMITS=`git log --pretty=format:"# %h %s [%an]" -5`
+	echo "${COMMITS}" >> $1
+
+Source: http://codeinthehole.com/writing/enhancing-your-git-commit-editor/
