@@ -63,3 +63,7 @@ Beim Eingeben der Commit-Message (`git commit`) kann man sich in dem Editor welc
 	echo "${COMMITS}" >> $1
 
 Source: http://codeinthehole.com/writing/enhancing-your-git-commit-editor/
+
+## Incoming / Outgoing Alias
+
+From: [http://zacharyflower.com/my-two-favorite-git-aliases/](http://zacharyflower.com/my-two-favorite-git-aliases/)
