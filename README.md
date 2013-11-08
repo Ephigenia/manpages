@@ -4,5 +4,6 @@
 * Git
 	* [Git - Eine praktische Einführung](http://de.slideshare.net/ephigenia1/git-praktische-einfhrung-13308756)
 	* [Commit Messages Guide](./git/commit-messages-guide.md)
+	* [Branching](./git/branching.md)
 	* [Advanced Commands](./git/advanced-commands.md)
 * [HipChat](./hipchat/index.md)
