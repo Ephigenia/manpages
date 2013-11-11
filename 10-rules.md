@@ -2,5 +2,7 @@
 -------------------------------------------------------------------------------
 
 ## VCS
-## Automated-Deployment
+## Workplaces
+## Unit-Tests, Continious Integration
+## Automated, Fast-Deployment
 ## ...

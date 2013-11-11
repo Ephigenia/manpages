@@ -3,7 +3,9 @@
 * [10 Rules](./10-rules.md)
 * Git
 	* [Git - Eine praktische Einführung](http://de.slideshare.net/ephigenia1/git-praktische-einfhrung-13308756)
-	* [Commit Messages Guide](./git/commit-messages-guide.md)
-	* [Branching](./git/branching.md)
 	* [Advanced Commands](./git/advanced-commands.md)
+	* [Branching](./git/branching.md)
+	* [Commit Messages Guide](./git/commit-messages-guide.md)
+	* [SVN to git Migration Guide](./git/svn-to-git.md)
 * [HipChat](./hipchat/index.md)
+* [Zip](./zip.md)
