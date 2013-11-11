@@ -89,8 +89,6 @@ SVN ignores can be specified in every directory in their svn-properties. In git 
 
 If the SVN repository contains sensitive information like passwords or keys you **should change them all** and remove the files containing them completely from the git history after you migrated the repository.
 
-	http://stackoverflow.com/questions/872565/remove-sensitive-files-and-their-commits-from-git-history
-
 	git filter-branch --force --index-filter 'git rm --cached --ignore-unmatch [filename-to-delete]' --prune-empty --tag-name-filter cat -- --all
 
 Don’t forget to set this file on `.gitignore` after deleting it from the history otherwise you may check in the file again!
