@@ -67,3 +67,9 @@ Source: http://codeinthehole.com/writing/enhancing-your-git-commit-editor/
 ## Incoming / Outgoing Alias
 
 From: [http://zacharyflower.com/my-two-favorite-git-aliases/](http://zacharyflower.com/my-two-favorite-git-aliases/)
+
+## Show Files with Conflicts
+
+Sometimes you need to get a list of files that have a conflict during a merge:
+
+	git diff --name-only --diff-filter=U
