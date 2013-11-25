@@ -73,3 +73,9 @@ From: [http://zacharyflower.com/my-two-favorite-git-aliases/](http://zacharyflow
 Sometimes you need to get a list of files that have a conflict during a merge:
 
 	git diff --name-only --diff-filter=U
+
+## Show branch list with last commit date & author
+
+This command will show a list of branches ordered descending by their last commit and will also show the date of the last commit together with the author:
+
+	git for-each-ref --sort=-committerdate refs/heads/ --format='%(committerdate:short) %(authorname) %(refname:short)'
