@@ -40,7 +40,7 @@ If your repository contains tags for each build or even branches you don't want 
 
 	--ignore-paths=/branches/foo/jars
 
-## Branches and Tags
+## Tags
 
 First create a list of all branches
 
@@ -51,25 +51,49 @@ Convert all Tags into git tags and remove tag-branch from remote
 	git tag <new-tag-name> <old-tag-name>
 	git branch -r -d <old-tag-name>
 
-You can automate the tags-to-branch-conversion with this simple shell script:
+You can automate the tags-to-branch-conversion with this simple shell script which iterates over all remote tags (coming from svn) and runs the two conversion commands on each:
 
-	git for-each-ref --format='%(refname)' refs/heads/tags |
+	git for-each-ref --format='%(refname)' refs/remotes/tags |
 	cut -d / -f 4 |
 	while read ref
 	do
-	  git tag "$ref" "refs/heads/tags/$ref";
+	  git tag "$ref" "refs/remotes/tags/$ref";
 	  git branch -D "tags/$ref";
 	done
 
-Convert all remaining remote svn-branches to local branches
+After you’ve converted all svn tag branches to real local tags you can check the list of finished tags with:
+
+	git tag
+
+### Push Branches to remote origin
+
+The tags are not synced to the remote repository and should be pushed to it. Selective push of single tags to remote:
+
+	git push origin <tag-name>
+
+## Branches
+
+Converting specific branches to local branches:
+	
+	git checkout -b <new-branch-name> remotes/<old-tag-name>
+
+This task can also be automated by using the `git for-reach-ref` command and grep for the branches you want to convert and run the previous command in the loop:
+
+	git for-each-ref --format='%(refname)' refs/remotes/ | grep "[0-9]-*"
+	cut -d / -f 4 |
+	while read ref
+	do
+	  git checkout -b "$ref" remote/$ref
+	done
+
+If you’re able to convert all remaining branches (you’ve deleted the `tag`-branches?) to local branches you can use a simple shortcut that basically changes the references of remote to local:
 
 	cp -Rf .git/refs/remotes/* .git/refs/heads/
 	rm -Rf .git/refs/remotes
 
 After that you check if there are branches or tags missing that have to get converted too:
 
-	git tag
-	git branch -a
+	git branch
 
 ## Rename "trunk" to "master"
 
