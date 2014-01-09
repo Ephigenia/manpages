@@ -10,3 +10,7 @@
 * [Hex](./hex.md)
 * [HipChat](./hipchat/index.md)
 * [Zip](./zip.md)
+
+# Resources to Read
+
+* [How to write GitHub Issues](http://wiredcraft.com/posts/2014/01/08/how-we-write-our-github-issues.html)
