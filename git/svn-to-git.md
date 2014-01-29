@@ -24,7 +24,7 @@ Number of revisions:
 
 	svn log <url> | grep ^r[0-9] | wc -l
 
-Estimate the size and number of files in a tree:
+Estimate the size and number of files in a tree (takes very long:
 
 	svn list -vR <url> | awk '{if ($3 !="") sum+=$3; i++} END {print "\nsize: " sum/1024000" MB" "\nfiles: " i}'
 
