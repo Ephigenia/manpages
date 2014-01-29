@@ -2,11 +2,39 @@
 
 ## Get Information about the repository:
 
-Before you start you should gather some information about the svn repository that will help you through the process.
+Before you start you should gather some information about the svn repository that will help you through the process. Especially the age and revision numbers will give you an idea of how long the migration process or the commands will run. Expect > 10 Minutes for > 1000 Revisions.
 
 * Does it use the standard directories for branches and tags?
-* How many revisions, tags and branches are there?
+  You can see all directories (aka) branches with `svn ls <url>`
+* How many revisions, tags and branches are there and how old is the repository?
 * Are there Externals used?
+
+### Helpful commands
+
+Count number of branches and tags:
+
+	svn ls <url>/branches | wc -l
+	svn ls <url>/tags | wc -l
+
+"short-log" of revisions inside a directory:
+
+	svn log <url> | grep ^r[0-9]
+
+Number of revisions:
+
+	svn log <url> | grep ^r[0-9] | wc -l
+
+Estimate the size and number of files in a tree:
+
+	svn list -vR <url> | awk '{if ($3 !="") sum+=$3; i++} END {print "\nsize: " sum/1024000" MB" "\nfiles: " i}'
+
+Get a list of externals used:
+
+	svn propget svn:externals -R <url>
+
+Get date of first commit in a tree:
+
+	svn log -r 1:HEAD --limit 1 <url> | grep r[0-9]
 
 ## Creating the Authors file
 
