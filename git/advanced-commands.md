@@ -79,3 +79,7 @@ Sometimes you need to get a list of files that have a conflict during a merge:
 This command will show a list of branches ordered descending by their last commit and will also show the date of the last commit together with the author:
 
 	git for-each-ref --sort=-committerdate refs/heads/ --format='%(committerdate:short) %(authorname) %(refname:short)'
+
+## git-extras
+
+[git-extras](https://github.com/visionmedia/git-extras) is a collection of advanced commands that integrate into the `git` command on the shell. It provides many informative commands like user lists, efforts on files and other stuff. See the [list of commands](https://github.com/visionmedia/git-extras/wiki#commands) you get.
