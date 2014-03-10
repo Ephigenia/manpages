@@ -64,6 +64,19 @@ Beim Eingeben der Commit-Message (`git commit`) kann man sich in dem Editor welc
 
 Source: http://codeinthehole.com/writing/enhancing-your-git-commit-editor/
 
+## Tags
+
+### Push single tag to remote
+
+	git push [remote-name] [tagname]
+
+### Push single tag to remote which allready exists
+
+For overwriting a tag in a remote you must delete the remote tag first. You can archive that by pushing it with the `--delete` option:
+
+	git push --delete [remote-name] [tagname]
+	git push [remote-name] [tagname]
+
 ## Incoming / Outgoing Alias
 
 From: [http://zacharyflower.com/my-two-favorite-git-aliases/](http://zacharyflower.com/my-two-favorite-git-aliases/)
