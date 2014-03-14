@@ -64,6 +64,12 @@ Beim Eingeben der Commit-Message (`git commit`) kann man sich in dem Editor welc
 
 Source: http://codeinthehole.com/writing/enhancing-your-git-commit-editor/
 
+## Change Stats
+
+Sometimes you want to know how many lines you or someone else changed in a time-frame:
+
+	git diff --shortstat "@{1 day ago}" --author "ephigenia"
+
 ## Tags
 
 ### Push single tag to remote
