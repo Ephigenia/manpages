@@ -43,6 +43,12 @@ Man kann sich über das Log Feature auch direkt die Sachen anzeigen lassen die m
 
 	git log --pretty=oneline --abbrev-commit --since yesterday --author ephigenia
 
+## Number of Commits
+
+Sometimes you want to know how many commits you’ve done since a specific tag or hash:
+
+	git rev-list hash..HEAD | wc -l
+
 ## Tree
 
 Um sich den Commit-Tree anzuzeigen wie man ihn vielleicht aus verschiedenen GUIs für Git kennt kann man sich ebenfalls dem `log` Befehl zu Hilfe nehmen:
