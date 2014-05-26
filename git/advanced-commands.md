@@ -43,6 +43,12 @@ Man kann sich über das Log Feature auch direkt die Sachen anzeigen lassen die m
 
 	git log --pretty=oneline --abbrev-commit --since yesterday --author ephigenia
 
+## Number of Commits
+
+Sometimes you want to know how many commits you’ve done since a specific tag or hash:
+
+	git rev-list hash..HEAD | wc -l
+
 ## Tree
 
 Um sich den Commit-Tree anzuzeigen wie man ihn vielleicht aus verschiedenen GUIs für Git kennt kann man sich ebenfalls dem `log` Befehl zu Hilfe nehmen:
@@ -63,6 +69,12 @@ Beim Eingeben der Commit-Message (`git commit`) kann man sich in dem Editor welc
 	echo "${COMMITS}" >> $1
 
 Source: http://codeinthehole.com/writing/enhancing-your-git-commit-editor/
+
+## Change Stats
+
+Sometimes you want to know how many lines you or someone else changed in a time-frame:
+
+	git diff --shortstat "@{1 day ago}" --author "ephigenia"
 
 ## Tags
 

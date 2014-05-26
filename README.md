@@ -15,3 +15,4 @@
 # Resources to Read
 
 * [How to write GitHub Issues](http://wiredcraft.com/posts/2014/01/08/how-we-write-our-github-issues.html)
+* [GitHub Cheat Sheet](https://github.com/tiimgreen/github-cheat-sheet)
