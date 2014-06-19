@@ -37,6 +37,12 @@ Man kann wenn die Commit Messages ein einheitliches Format mit Headline und Desc
 
 Zeigt das Log der letzten 2 Tage mit den Headlines welches sich hoffentlich dazu eigenen sie in ein Changelog einzutragen.
 
+## Log over all time
+
+Manchmal hat man Mist gebaut und muss gucken wo die Änderungen in einer Datei gelandet sind. Ein einfaches `git log <path>` ist nicht ausreichend weil die Änderung eventuell in einem Commit in der Zukunft gelandet ist. Dann muss man ein Log ausgeben können welches auf allen Branches schaut:
+
+	git log --all -- <path>
+
 ## Standup
 
 Man kann sich über das Log Feature auch direkt die Sachen anzeigen lassen die man am letzten Tag so committet hat:
