@@ -114,3 +114,25 @@ This command will show a list of branches ordered descending by their last commi
 ## git-extras
 
 [git-extras](https://github.com/visionmedia/git-extras) is a collection of advanced commands that integrate into the `git` command on the shell. It provides many informative commands like user lists, efforts on files and other stuff. See the [list of commands](https://github.com/visionmedia/git-extras/wiki#commands) you get.
+
+## Branches
+
+### List unmerged branches
+
+List the names of all branches which are not merged with the current active branch. This can be helpfull to determine after some time which branches should get merged into a release branch f.e.:
+
+	git branch --merged master
+
++ last author and time (thanks to [Dirk Breuer](https://coderwall.com/p/6l2paq))
+
+	git branch -r --no-merged | grep -v HEAD | xargs -L1 git --no-pager log --pretty=tformat:'%Cgreen%d%Creset - %h by %an (%Cblue%ar%Creset)' -1
+
+### List merged branches
+
+List names of all branches that have been merged with the current branches:
+
+	branch --no-merged
+
++ last author and time
+
+	git branch -r --merged | grep -v HEAD | xargs -L1 git --no-pager log --pretty=tformat:'%Cgreen%d%Creset - %h by %an (%Cblue%ar%Creset)' -1
