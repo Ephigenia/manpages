@@ -1,4 +1,4 @@
-# Foobugs Manuals and Docs
+# Manuals and Docs
 
 * [10 Rules](./10-rules.md)
 * [Android](./android/apk.md)
