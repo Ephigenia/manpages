@@ -10,7 +10,6 @@
 	* [Patching](./git/patching.md)
 	* [SVN to git Migration Guide](./git/svn-to-git.md)
 * [Hex](./hex.md)
-* [HipChat](./hipchat/index.md)
 * [Zip](./zip.md)
 
 # Resources to Read
