@@ -17,3 +17,7 @@ Sometimes there are several unmerged branches for different reasons. They may be
 The remote branches will remain on their remote location untill you delete them one by one with `git branch push --delete origin <branch-name>` or just remove all which are not available locally:
 
     git remote prune origin
+    
+You can iterate over all branches and remove them programatically:
+
+    for branch in $(git branch --merged); do if [ "$branch" != "*" ] && [ "$branch" != "develop" ]; then git branch -d $branch; elif; done;
