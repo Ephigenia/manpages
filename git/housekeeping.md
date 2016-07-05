@@ -21,3 +21,7 @@ The remote branches will remain on their remote location untill you delete them 
 You can iterate over all branches and remove them programatically:
 
     for branch in $(git branch --merged); do if [ "$branch" != "*" ] && [ "$branch" != "develop" ]; then git branch -d $branch; elif; done;
+    
+An also on remote:
+
+    git branch -r --merged | grep -v visono | grep -v upstream | grep -v HEAD | sed 's/origin\///' | xargs -n 1 git push --delete origin
