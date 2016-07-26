@@ -136,3 +136,11 @@ List names of all branches that have been merged with the current branches:
 + last author and time
 
 	git branch -r --merged | grep -v HEAD | xargs -L1 git --no-pager log --pretty=tformat:'%Cgreen%d%Creset - %h by %an (%Cblue%ar%Creset)' -1
+
+### Find @TODO tags in changes
+
+I’m leaving a bunch of `@TODO` annotations in the code when developing a feature or fixing a bug which i want to resolve before finally pushing the changes to remote. To find those annotations in the changed files only I use:
+
+    grep -nH -s "@TODO" $(git ls-files -m)
+    
+This will grep trough all the changed files (since the last commit, if you want wider range use `git diff --name-only HEAD~3`) and list the filenames (`-H`)including line-numbers (`-n`).
