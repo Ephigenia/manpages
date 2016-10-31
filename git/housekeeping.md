@@ -25,3 +25,9 @@ You can iterate over all branches and remove them programatically:
 An also on remote:
 
     git branch -r --merged | grep -v visono | grep -v upstream | grep -v HEAD | sed 's/origin\///' | xargs -n 1 git push --delete origin
+
+### Delete branches \w grep
+
+Deleting branches using grep could also be helpfull to clear all "feature" branches or with changed prefixes. This command will remove all branches (force remove!) that start with "feature/"
+
+    git branch -D `git branch | grep -E 'feature/'`
