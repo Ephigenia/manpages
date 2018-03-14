@@ -1,22 +1,59 @@
+## Update
+
+Before doing anything update everything
+
+    sudo apt-get update 
+    sudo apt-get upgrade -y
+
+## Configuration
+
+use `sudo raspi-config`:
+
+- set ssh user password
+- set timezone in "Localisation Options"
+- enable VNC & SSH in "Interfacing Options"
+- enable overscan & set resolution
+- run the update
+
 # Disable Screensaver
 
     # /home/pi/.config/lxsession/LXDE-pi/autostart
-    # disable those lines:
-    #@lxpanel --profile LXDE
-    #@pcmanfm --desktop --profile LXDE
-    #@xscreensaver -no-splash
 
+    # deactivated default lines
+    #@lxpanel --profile LXDE-pi
+    #@pcmanfm --desktop --profile LXDE-pi
+    #@xscreensaver -no-splash
+    #@point-rpi
+
+    # now the new lines:
     # disable sleep mode
     @xset s off
     @xset -dpms
     @xset s noblank
 
 
+# Disable mouse pointer
 
-# Chrome Startup
+install unclutter
+
+    sudo apt-get install unclutter
+
+then activate unclutter:
 
     # /home/pi/.config/lxsession/LXDE-pi/autostart
-    @chromium-browser --noerrdialogs --disable-session-crashed-bubble --disable-infobars --kiosk <url>
+    # hide mouse cursor
+    # requires "unclutter" to be installed
+    #   sudo apt-get install unclutter
+    @unclutter -idle 0
+
+
+# Chrome Autostart
+
+change autostart settings:
+
+    # read about supported comamnd line arguemnts:
+    # https://peter.sh/experiments/chromium-command-line-switches/
+    @chromium-browser --noerrdialogs --incognito --disable-infobars --kiosk <url>
 
 
 
